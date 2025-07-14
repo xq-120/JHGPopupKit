@@ -52,7 +52,6 @@ class FDEHomeViewController: FDEBaseViewController, UITableViewDelegate, UITable
         item1.actionBlk = { [weak self] in
             guard let self = self else {return}
             let popupView = BroadcastBeginAlertView.init()
-//            popupView.show(in: self.tabBarController!.view, completion: nil)
             popupView.show(in: self.tabBarController!.view, animated: true, completion: nil)
         }
         dataList.append(item1)
@@ -106,10 +105,12 @@ class FDEHomeViewController: FDEBaseViewController, UITableViewDelegate, UITable
         item5.actionBlk = { [weak self] in
             guard let self = self else {return}
             let popupView = JKBroadcastBeginAlertViewController.init()
-            popupView.sureBtnDidClickedBlk = { [weak self] in
-                let detail = FDEDetailViewController.init()
-                detail.hidesBottomBarWhenPushed = true
-                self?.navigationController?.pushViewController(detail, animated: true)
+            popupView.sureBtnDidClickedBlk = { [weak popupView, weak self] in
+                popupView?.hidden(completion: {
+                    let detail = FDEDetailViewController.init()
+                    detail.hidesBottomBarWhenPushed = true
+                    self?.navigationController?.pushViewController(detail, animated: true)
+                })
             }
             popupView.show(in: self, isWrapInNavigationController: false, animated: true, completion: nil)
         }
@@ -144,9 +145,11 @@ class FDEHomeViewController: FDEBaseViewController, UITableViewDelegate, UITable
             guard let self = self else {return}
             let popupView = JKSupportGroupVoteAlertViewController.init()
             popupView.confirmBtnDidClickedBlk = { [weak popupView, weak self] item in
-                let detail = FDEDetailViewController.init()
-                detail.hidesBottomBarWhenPushed = true
-                self?.navigationController?.pushViewController(detail, animated: true)
+                popupView?.hidden(completion: {
+                    let detail = FDEDetailViewController.init()
+                    detail.hidesBottomBarWhenPushed = true
+                    self?.navigationController?.pushViewController(detail, animated: true)
+                })
             }
             popupView.shouldDismissOnTouchBackView = true
             popupView.show(in: nil, completion: nil)
@@ -178,7 +181,7 @@ class FDEHomeViewController: FDEBaseViewController, UITableViewDelegate, UITable
                 let popupView = JHGAlertView.init()
                 popupView.titleLabel.text = "温馨提示"
                 popupView.contentLabel.text = "站在车外，秦沐抬起头，仰望着那片漆黑一片、没有丝毫星光点缀的夜空。她静静地凝视着这片无尽的黑暗。"
-                popupView.buttonLayoutStyle = .vertical
+                popupView.buttonLayoutStyle = .horizon
                 popupView.onlyShowLeftBtn = false
                 popupView.show(in: nil, animated: true, completion: nil)
             }
