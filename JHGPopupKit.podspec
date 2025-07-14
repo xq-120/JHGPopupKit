@@ -13,8 +13,6 @@ Pod::Spec.new do |spec|
   
   spec.platform     = :ios, "10.0"
   spec.source       = { :git => "https://github.com/xq-120/JHGPopupKit.git", :tag => "#{spec.version}" }
-
-  spec.source_files = 'JHGPopupKit/JHGPopupKit.h'
   
   spec.subspec 'Core' do |ss|
     ss.source_files = 'JHGPopupKit/Core/*.{h,m}'
