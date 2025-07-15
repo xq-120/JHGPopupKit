@@ -13,9 +13,11 @@ PODS:
     - Masonry (~> 1.1.0)
   - JHGPopupKit/PopupView (1.8.0):
     - JHGPopupKit/Core
+    - JHGPopupKit/Utils
     - Masonry (~> 1.1.0)
   - JHGPopupKit/PopupViewController (1.8.0):
     - JHGPopupKit/Core
+    - JHGPopupKit/Utils
     - Masonry (~> 1.1.0)
   - JHGPopupKit/Utils (1.8.0):
     - Masonry (~> 1.1.0)
@@ -36,7 +38,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JHGPopupKit: 0e6a1b3ab64e800796dc14d765eda24348c583a6
+  JHGPopupKit: 5924c49dd00a30c9862d53915d6b52e3f62db710
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
