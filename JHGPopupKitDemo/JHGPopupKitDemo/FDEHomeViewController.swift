@@ -8,6 +8,7 @@
 
 import UIKit
 import JHGPopupKit
+import JHGPopupManager
 
 class FDEHomeViewController: FDEBaseViewController, UITableViewDelegate, UITableViewDataSource {
     

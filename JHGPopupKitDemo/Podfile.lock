@@ -21,11 +21,14 @@ PODS:
     - Masonry (~> 1.1.0)
   - JHGPopupKit/Utils (1.8.0):
     - Masonry (~> 1.1.0)
+  - JHGPopupManager (1.0.0):
+    - JHGPopupKit/Utils (~> 1.8.0)
   - Masonry (1.1.0)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - JHGPopupKit (from `../`)
+  - JHGPopupManager (from `https://github.com/xq-120/JHGPopupManager.git`, commit `5a75d0a`)
   - SnapKit (~> 5.0.0)
 
 SPEC REPOS:
@@ -36,12 +39,21 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   JHGPopupKit:
     :path: "../"
+  JHGPopupManager:
+    :commit: 5a75d0a
+    :git: https://github.com/xq-120/JHGPopupManager.git
+
+CHECKOUT OPTIONS:
+  JHGPopupManager:
+    :commit: 5a75d0a
+    :git: https://github.com/xq-120/JHGPopupManager.git
 
 SPEC CHECKSUMS:
   JHGPopupKit: 5924c49dd00a30c9862d53915d6b52e3f62db710
+  JHGPopupManager: ffdd44017d1ecae68ef32336b38a810152004174
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 5b6cad5a46351c3e928d442a26dbb85fec8821a5
+PODFILE CHECKSUM: 0d1a7f1b4ac6fed0756e2c38abb2fed12736c34c
 
 COCOAPODS: 1.16.2
