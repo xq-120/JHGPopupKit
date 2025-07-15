@@ -21,11 +21,13 @@ Pod::Spec.new do |spec|
   spec.subspec 'PopupView' do |ss|
     ss.source_files = 'JHGPopupKit/PopupView/*.{h,m}'
     ss.dependency 'JHGPopupKit/Core'
+    ss.dependency 'JHGPopupKit/Utils'
   end
   
   spec.subspec 'PopupViewController' do |ss|
     ss.source_files = 'JHGPopupKit/PopupViewController/*.{h,m}'
     ss.dependency 'JHGPopupKit/Core'
+    ss.dependency 'JHGPopupKit/Utils'
   end
   
   spec.subspec 'Plugins' do |ss|
