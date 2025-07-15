@@ -2,7 +2,7 @@
 //  JHGPopupUtils.m
 //  JHGPopupView
 //
-//  Created by 薛权 on 2025/7/12.
+//  Created by uzzi on 2025/7/12.
 //
 
 #import "JHGPopupUtils.h"

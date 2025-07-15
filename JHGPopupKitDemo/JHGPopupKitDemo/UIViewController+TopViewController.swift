@@ -2,7 +2,7 @@
 //  UIApplication+TopViewController.swift
 //  EmotionCounsel
 //
-//  Created by 薛权 on 2019/6/10.
+//  Created by uzzi on 2019/6/10.
 //  Copyright © 2019 zhenai. All rights reserved.
 //
 

@@ -1,20 +1,23 @@
 PODS:
-  - JHGPopupKit (1.7.0):
-    - JHGPopupKit/Core (= 1.7.0)
-    - JHGPopupKit/Plugins (= 1.7.0)
-    - JHGPopupKit/PopupView (= 1.7.0)
-    - JHGPopupKit/PopupViewController (= 1.7.0)
+  - JHGPopupKit (1.8.0):
+    - JHGPopupKit/Core (= 1.8.0)
+    - JHGPopupKit/Plugins (= 1.8.0)
+    - JHGPopupKit/PopupView (= 1.8.0)
+    - JHGPopupKit/PopupViewController (= 1.8.0)
+    - JHGPopupKit/Utils (= 1.8.0)
     - Masonry (~> 1.1.0)
-  - JHGPopupKit/Core (1.7.0):
+  - JHGPopupKit/Core (1.8.0):
     - Masonry (~> 1.1.0)
-  - JHGPopupKit/Plugins (1.7.0):
+  - JHGPopupKit/Plugins (1.8.0):
     - JHGPopupKit/PopupView
     - Masonry (~> 1.1.0)
-  - JHGPopupKit/PopupView (1.7.0):
+  - JHGPopupKit/PopupView (1.8.0):
     - JHGPopupKit/Core
     - Masonry (~> 1.1.0)
-  - JHGPopupKit/PopupViewController (1.7.0):
+  - JHGPopupKit/PopupViewController (1.8.0):
     - JHGPopupKit/Core
+    - Masonry (~> 1.1.0)
+  - JHGPopupKit/Utils (1.8.0):
     - Masonry (~> 1.1.0)
   - Masonry (1.1.0)
   - SnapKit (5.0.1)
@@ -33,7 +36,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  JHGPopupKit: 20f394587046695a1d56c79652d86fc63e5833a8
+  JHGPopupKit: 0e6a1b3ab64e800796dc14d765eda24348c583a6
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 

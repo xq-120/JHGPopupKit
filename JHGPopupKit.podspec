@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "JHGPopupKit"
-  spec.version      = "1.7.0"
+  spec.version      = "1.8.0"
   spec.summary      = "弹窗."
   spec.description  = <<-DESC
                     一个自定义程度非常高的弹窗组件。它对外提供一个容器视图，因此开发者可以完全自定义弹窗内容。
@@ -31,6 +31,10 @@ Pod::Spec.new do |spec|
   spec.subspec 'Plugins' do |ss|
     ss.source_files = 'JHGPopupKit/Plugins/*.{h,m}'
     ss.dependency 'JHGPopupKit/PopupView'
+  end
+  
+  spec.subspec 'Utils' do |ss|
+    ss.source_files = 'JHGPopupKit/Utils/*.{h,m}'
   end
     
   spec.frameworks   = "Foundation", "UIKit"
