@@ -187,6 +187,96 @@ class FDEHomeViewController: FDEBaseViewController, UITableViewDelegate, UITable
             }
             dataList.append(item)
         }
+        
+        do {
+            let item = FDEItemModel.init()
+            item.title = "菜单弹窗"
+            item.actionBlk = { [weak self] in
+                guard let self = self else {return}
+                let popupView = JHGSheetView.init()
+                popupView.titleExtraHeight = 12;
+                popupView.subtitleExtraHeight = 12;
+                popupView.topMargin = 12;
+                popupView.subtitleBtnMargin = 9;
+                popupView.hiddenCancelButton = false
+                popupView.showSheet(withTitle: "温馨提示", subtitle: "您的余额已不足，请及时充值", buttonTitles: ["充值10元", "充值20元", "充值50元", "充值100元",]) { index in
+                    print("点击第\(index)个")
+                } completion: {
+                    
+                }
+            }
+            dataList.append(item)
+        }
+        
+        do {
+            let item = FDEItemModel.init()
+            item.title = "菜单弹窗1"
+            item.actionBlk = { [weak self] in
+                guard let self = self else {return}
+                let popupView = JHGSheetView.init()
+                popupView.hiddenCancelButton = true
+                popupView.showSheet(withTitle: nil, subtitle: nil, buttonTitles: ["充值10元", "充值20元", "充值50元", "充值100元",]) { index in
+                    print("点击第\(index)个")
+                } completion: {
+                    
+                }
+            }
+            dataList.append(item)
+        }
+        
+        do {
+            let item = FDEItemModel.init()
+            item.title = "菜单弹窗2"
+            item.actionBlk = { [weak self] in
+                guard let self = self else {return}
+                let popupView = JHGSheetView.init()
+                popupView.sheetTitleLabel.text = "温馨提示"
+                popupView.titleExtraHeight = 30
+                popupView.addBtn { btn in
+                    btn.setTitle("充值10元", for: .normal)
+                    btn.setTitleColor(.black, for: .normal)
+                } actionHandler: { btn, index in
+                    print("点击第\(index)个")
+                }
+                popupView.addBtn { btn in
+                    btn.setTitle("充值20元", for: .normal)
+                    btn.setTitleColor(.blue, for: .normal)
+                } actionHandler: { btn, index in
+                    print("点击第\(index)个")
+                }
+                popupView.addBtn { btn in
+                    btn.setTitle("充值100元", for: .normal)
+                    btn.setTitleColor(.cyan, for: .normal)
+                } actionHandler: { btn, index in
+                    print("点击第\(index)个")
+                }
+                popupView.cancelButton.setTitleColor(.purple, for: .normal)
+                popupView.show()
+            }
+            dataList.append(item)
+        }
+        
+        do {
+            let item = FDEItemModel.init()
+            item.title = "菜单弹窗3"
+            item.actionBlk = { [weak self] in
+                guard let self = self else {return}
+                let popupView = JHGSheetView.init()
+                popupView.hiddenCancelButton = true
+                popupView.addBtn { btn in
+                    btn.setTitle("混用的一个按钮", for: .normal)
+                    btn.setTitleColor(.black, for: .normal)
+                } actionHandler: { btn, index in
+                    print("点击第\(index)个")
+                }
+                popupView.showSheet(withTitle: nil, subtitle: nil, buttonTitles: ["充值10元", "充值20元", "充值50元", "充值100元",]) { index in
+                    print("点击第\(index)个")
+                } completion: {
+                    
+                }
+            }
+            dataList.append(item)
+        }
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
