@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (nullable UIViewController *)topViewController;
 + (nullable UIViewController *)topViewControllerWithController:(UIViewController *)controller;
-+ (nullable UIWindow *)appMainWindow;
++ (nullable UIWindow *)appKeyWindow;
 
 @end
 

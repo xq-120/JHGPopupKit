@@ -10,7 +10,7 @@
 @implementation JHGPopupUtils
 
 + (UIViewController *)topViewController {
-    UIWindow *window = [self appMainWindow];
+    UIWindow *window = [self appKeyWindow];
     if (!window || !window.rootViewController) {
         return nil;
     }
@@ -37,23 +37,55 @@
     }
 }
 
-+ (UIWindow *)appMainWindow {
++ (UIWindow *)appKeyWindow {
+    UIWindow *window = nil;
+    // iOS 13+ 先从 foregroundActive 的 scene 中找 isKeyWindow
     if (@available(iOS 13.0, *)) {
-        for (UIScene *scene in [UIApplication sharedApplication].connectedScenes) {
-            if ([scene isKindOfClass:[UIWindowScene class]]) {
+        NSSet<UIScene *> *scenes = [UIApplication sharedApplication].connectedScenes;
+        
+        for (UIScene *scene in scenes) {
+            if (scene.activationState == UISceneActivationStateForegroundActive &&
+                [scene isKindOfClass:[UIWindowScene class]]) {
+                
                 UIWindowScene *windowScene = (UIWindowScene *)scene;
-                for (UIWindow *window in windowScene.windows) {
-                    if (window.windowLevel == UIWindowLevelNormal) {
-                        return window;
+                for (UIWindow *w in windowScene.windows) {
+                    if (w.isKeyWindow) {
+                        window = w;
+                        break;
                     }
                 }
             }
+            if (window) break;
         }
-        // fallback
-        return UIApplication.sharedApplication.delegate.window;
-    } else {
-        return UIApplication.sharedApplication.delegate.window;
     }
+    if (window) {
+        return window;
+    }
+    
+    // 其次从 UIApplication.sharedApplication.windows 找
+    for (UIWindow *w in UIApplication.sharedApplication.windows) {
+        if (w.isKeyWindow) {
+            window = w;
+            break;
+        }
+    }
+    if (window) {
+        return window;
+    }
+    
+    // 再次 fallback 到 keyWindow
+    window = UIApplication.sharedApplication.keyWindow;
+    if (window) {
+        return window;
+    }
+
+    // 最后从 AppDelegate 拿
+    id<UIApplicationDelegate> delegate = UIApplication.sharedApplication.delegate;
+    if ([delegate respondsToSelector:@selector(window)]) {
+        window = [delegate window];
+    }
+    
+    return window;
 }
 
 

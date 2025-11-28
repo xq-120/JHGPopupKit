@@ -8,11 +8,10 @@
 #ifndef JHGPopupProtocol_h
 #define JHGPopupProtocol_h
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+/// 弹窗协议
 @protocol JHGPopupProtocol <NSObject>
 
 /// 是否正在显示。

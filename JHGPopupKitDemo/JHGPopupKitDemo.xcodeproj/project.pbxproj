@@ -57,15 +57,11 @@
 		};
 		35BB157E2E2493D30020F122 /* JHGPopupKitDemoTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = JHGPopupKitDemoTests;
 			sourceTree = "<group>";
 		};
 		35BB15882E2493D30020F122 /* JHGPopupKitDemoUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
 			path = JHGPopupKitDemoUITests;
 			sourceTree = "<group>";
 		};
@@ -303,9 +299,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-JHGPopupKitDemo/Pods-JHGPopupKitDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-JHGPopupKitDemo/Pods-JHGPopupKitDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

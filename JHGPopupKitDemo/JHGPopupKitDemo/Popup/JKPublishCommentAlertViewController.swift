@@ -92,7 +92,7 @@ class JKPublishCommentAlertViewController: JHGPopupViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         view.layoutIfNeeded() //马上计算frame.
-        contentView.addRoundingCorners(roundedRect: contentView.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize.init(width: 10, height: 10))
+        contentView.jh_addRoundingCorners([.topLeft, .topRight], cornerRadii: CGSize.init(width: 10, height: 10))
         
         textView.becomeFirstResponder()
     }

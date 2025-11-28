@@ -58,7 +58,6 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)hiddenWithAnimated:(BOOL)animated completion:(void (^ _Nullable)(void))completion;
 
 
-
 /// 弹窗的父视图
 @property (nonatomic, weak, nullable) UIView *inView;
 

@@ -87,7 +87,7 @@ class PublishCommentAlertView: JHGPopupView {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         DispatchQueue.main.async {
-            self.contentView.addRoundingCorners(roundedRect: self.contentView.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize.init(width: 10, height: 10))
+            self.contentView.jh_addRoundingCorners([.topLeft, .topRight], cornerRadii: CGSize.init(width: 10, height: 10))
         }
     }
     

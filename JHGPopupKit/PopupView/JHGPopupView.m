@@ -12,7 +12,7 @@
 @interface JHGPopupView ()
 
 @property (nonatomic, strong) UIButton *backView;
-@property (nonatomic, readwrite, strong) UIView * _Nonnull contentView;
+@property (nonatomic, readwrite, strong) UIView * contentView;
 
 @end
 
@@ -66,7 +66,7 @@
 
 - (void)showIn:(UIView *)view animated:(BOOL)animated completion:(void (^)(void))completion {
     if (view == nil) {
-        view = [JHGPopupUtils appMainWindow];
+        view = [JHGPopupUtils appKeyWindow];
     }
     if (view == nil) {
         return;

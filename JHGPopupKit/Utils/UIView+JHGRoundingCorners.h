@@ -33,7 +33,7 @@
 
 @interface UIDevice (FullScreen)
 
-+ (BOOL)jh_isIPhoneX;
++ (BOOL)jh_isFullScreen;
 
 + (CGFloat)jh_homeIndicatorHeight;
 

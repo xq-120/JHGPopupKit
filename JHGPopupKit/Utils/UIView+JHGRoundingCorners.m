@@ -46,9 +46,9 @@
 
 @implementation UIDevice (FullScreen)
 
-+ (BOOL)jh_isIPhoneX {
++ (BOOL)jh_isFullScreen {
     if (@available(iOS 11.0, *)) {
-        if ([JHGPopupUtils appMainWindow].safeAreaInsets.bottom > 0) {
+        if ([JHGPopupUtils appKeyWindow].safeAreaInsets.bottom > 0) {
             return true;
         }
     }
@@ -57,7 +57,7 @@
 
 + (CGFloat)jh_homeIndicatorHeight {
     if (@available(iOS 11.0, *)) {
-        return [JHGPopupUtils appMainWindow].safeAreaInsets.bottom;
+        return [JHGPopupUtils appKeyWindow].safeAreaInsets.bottom;
     }
     return 0;
 }
