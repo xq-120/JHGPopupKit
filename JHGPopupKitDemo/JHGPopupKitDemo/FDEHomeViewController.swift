@@ -56,6 +56,18 @@ class FDEHomeViewController: FDEBaseViewController, UITableViewDelegate, UITable
         }
         dataList.append(item1)
         
+        do {
+            let item = FDEItemModel.init()
+            item.title = "高度固定弹窗"
+            item.actionBlk = { [weak self] in
+                guard let self = self else {return}
+                let popupView = PosterShareAlertView.init()
+                popupView.shouldDismissOnTouchBackView = true
+                popupView.show(in: self.tabBarController!.view, completion: nil)
+            }
+            dataList.append(item)
+        }
+        
         let item2 = FDEItemModel.init()
         item2.title = "底部文本输入弹窗"
         item2.actionBlk = { [weak self] in
