@@ -44,6 +44,6 @@ Pod::Spec.new do |spec|
   spec.dependency "Masonry", '~> 1.1.0'
 
   spec.pod_target_xcconfig = {
-    'IPHONEOS_DEPLOYMENT_TARGET' => '10.0'
+    'IPHONEOS_DEPLOYMENT_TARGET' => '15.0'
   }
 end
