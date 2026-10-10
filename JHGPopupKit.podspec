@@ -11,7 +11,7 @@ Pod::Spec.new do |spec|
   spec.license      = "MIT"
   spec.author       = { "uzzi" => "1204556447@qq.com" }
   
-  spec.platform     = :ios, "10.0"
+  spec.platform     = :ios, "15.0"
   spec.source       = { :git => "https://github.com/xq-120/JHGPopupKit.git", :tag => "#{spec.version}" }
   
   spec.subspec 'Core' do |ss|
