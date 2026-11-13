@@ -146,8 +146,10 @@
         }];
     }
     
-    [self layoutIfNeeded];
-    [self.contentView jh_addRoundingCorners:UIRectCornerTopLeft|UIRectCornerTopRight cornerRadii:CGSizeMake(_contentViewCorner, _contentViewCorner)];
+    // 面板挂载后才有实际尺寸，图层圆角会随面板宽高更新。
+    self.contentView.layer.cornerRadius = self.contentViewCorner;
+    self.contentView.layer.maskedCorners = kCALayerMinXMinYCorner | kCALayerMaxXMinYCorner;
+    self.contentView.layer.masksToBounds = YES;
 }
 
 - (void)showSheetWithTitle:(NSString *)title subtitle:(NSString *)subtitle buttonTitles:(NSArray<NSString *> *)buttonTitles actionBlk:(void (^)(NSInteger))actionBlk completion:(void (^)(void))completion {

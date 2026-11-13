@@ -13,18 +13,21 @@
 
 @property (nonatomic, strong) UIButton *backView;
 @property (nonatomic, readwrite, strong) UIView * contentView;
+/// 初始化时未指定 frame 的弹窗，每次挂载都铺满宿主并跟随其宽高。
+@property (nonatomic, assign) BOOL fillsHostView;
 
 @end
 
 @implementation JHGPopupView
 
 - (instancetype)init {
-    return [self initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+    return [self initWithFrame:CGRectZero];
 }
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        _fillsHostView = CGRectEqualToRect(frame, CGRectZero);
         [self _commonInit];
     }
     return self;
@@ -72,8 +75,9 @@
         return;
     }
     
-    if (CGRectEqualToRect(self.frame, CGRectZero)) {
-        self.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height);
+    if (self.fillsHostView) {
+        self.frame = view.bounds;
+        self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     }
     [view addSubview:self];
     self.inView = view;
