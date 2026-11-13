@@ -25,6 +25,8 @@ typedef NS_ENUM(NSInteger, JHGAlertViewButtonLayoutStyle) {
 @property (nonatomic, assign) CGFloat contentBtnMargin;
 
 @property (nonatomic, assign) CGFloat alertViewEdgeMargin;
+/// 内容区最大宽度，默认 360 pt。请在展示前设置。
+@property (nonatomic, assign) CGFloat maxAlertWidth;
 
 @property (nonatomic, assign) CGFloat titleEdgeMargin;
 

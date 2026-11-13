@@ -20,6 +20,7 @@
         _contentBtnMargin = 30;
         
         _alertViewEdgeMargin = 30;
+        _maxAlertWidth = 360;
         _titleEdgeMargin = 20;
         _contentEdgeMargin = 20;
         _buttonEdgeMargin = 20;
@@ -48,10 +49,15 @@
     [self.contentView addSubview:self.line2View];
 }
 
+/// 横向跟随宿主安全区，宽屏时限制内容宽度。
 - (void)makeSubviewContraints {
+    MASViewAttribute *safeWidth = [[MASViewAttribute alloc] initWithView:self item:self.safeAreaLayoutGuide layoutAttribute:NSLayoutAttributeWidth];
+    MASViewAttribute *safeCenterX = [[MASViewAttribute alloc] initWithView:self item:self.safeAreaLayoutGuide layoutAttribute:NSLayoutAttributeCenterX];
     [self.contentView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(self).offset(self.alertViewEdgeMargin);
-        make.center.equalTo(self);
+        make.centerX.equalTo(safeCenterX);
+        make.centerY.equalTo(self);
+        make.width.lessThanOrEqualTo(@(self.maxAlertWidth));
+        make.width.equalTo(safeWidth).offset(-2 * self.alertViewEdgeMargin).priority(999);
         if (self.minAlertHeight != -1) {
             make.height.mas_greaterThanOrEqualTo(self.minAlertHeight);
         }
